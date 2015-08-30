@@ -1,3 +1,24 @@
-<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
-<div class="container">
-	<div class="title">Whats up yo!</div> </div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+</head>
+<body>
+  <div id="todo">
+  </div>
+  <script type="text/template" id="item-template">
+    <div class="view">
+      <input id="todo_complete" type="checkbox" <%= completed ? 'checked="checked"' : '' %> />
+      <label><%= title %></label>
+      <button class="destroy"></button>
+    </div>
+    <input class="edit" value="<%= title %>">
+  </script>
+  <script src="lib/jquery-2.1.4.js"></script>
+  <script src="lib/underscore.js"></script>
+  <script src="lib/backbone.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>

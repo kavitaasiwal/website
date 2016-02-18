@@ -1,0 +1,17 @@
+.calendarContainer {
+  border: 1px solid #ccc;
+  display: inline-block;
+  margin: auto;
+  height: 1440px;
+  width: 600px;
+  position: relative;
+  text-align: center;
+  font-family: helvetica;
+}
+
+.calendarContainer span {
+  position: absolute;
+  border: 1px solid #ccc;
+  color: green;
+  background-color: #DAE5F1;
+}

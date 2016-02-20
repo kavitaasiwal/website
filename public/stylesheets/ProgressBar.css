@@ -1,0 +1,24 @@
+.progressBarWrapper {
+	padding: 20px;
+	background-color: #eee;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	width: 500px;
+	margin: auto;
+}
+.progressBarWrapper .progressBar {
+	background-color: #154A78;
+	height: 35px;
+}
+
+.progressBarWrapper .title {
+	margin: 0 0 10px 0;
+    width: 90%;
+    display: inline-block;
+}
+
+.progressBarWrapper .percentageIndicator {
+	width: 10%;
+    display: inline-block;
+    text-align: right;
+}

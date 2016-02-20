@@ -1,0 +1,30 @@
+{
+  "name": "mera-blog",
+  "description": "Personal website",
+  "main": "index.js",
+  "authors": [
+    "Kavita Asiwal <kavita_asiwal@intuit.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "react",
+    "heroku"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "kavita-asiwal.me",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "^0.14.7",
+    "react-router": "^2.0.0"
+  }
+}

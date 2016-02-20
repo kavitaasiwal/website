@@ -1,3 +1,8 @@
+body{
+	font-family: Helvetica;
+	font-weight: 100; 
+}
+
 .progressBarWrapper {
 	padding: 20px;
 	background-color: #eee;

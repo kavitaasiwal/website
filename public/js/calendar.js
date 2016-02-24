@@ -7,13 +7,13 @@ function calculateMeetingPosition(meetings) {
     for (i=0; i<meetings.length; i++) {
         // Find the set of conflicting meetings
         for (j=i+1; j< meetings.length; j++) {
-            if (meetings[j].start >= meetings[i].end) {
+            if (meetings[j].start >= meetings[j-1].end) {
                 break;
             }
         }
 
         //calculate the positions for conflicting meetings
-        for (k = i; k<j; k++) {
+        for (k=i; k<j; k++) {
             meetings[k].top = 2*meetings[k].start;
             meetings[k].width = totalWidth/(j-i);
             meetings[k].left = meetings[k].width*(k-i);
@@ -42,7 +42,7 @@ function displayMeetings(meetings) {
 displayMeetings([{
 id : "Meeting 1", start : 60, end : 150
 },{
-id : "Meeting 2", start : 540, end : 670
+id : "Meeting 2", start : 540, end : 570
 },{
 id : "Meeting 3", start : 555, end : 600
 },{

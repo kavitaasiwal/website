@@ -72,7 +72,6 @@ var HomepageView = Backbone.View.extend({
 });
 
 // var homepageView = new HomepageView({el: $('#_rootNode')});
-Game = require('public/js/pong.js').Game;
 var GameView = Backbone.View.extend({
   initialize: function (options) {
     // In Backbone 1.1.0, if you want to access passed options in

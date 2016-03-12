@@ -11,6 +11,7 @@ GameObject.prototype = {
 		this.y = params.y;
 		this.color = params.color;
 		this.type = params.type;
+		this.subtype = params.subtype;
 	},
 
 	getType: function () {
@@ -95,7 +96,7 @@ Game.prototype = {
 	},
 
 	startGame: function () {
-		var dx = 2, dy = -2, barDx = 10, ballx, bally;
+		var dx = 4, dy = -4, barDx = 10, ballx, bally, ballradius;
 		this.setEventHandlers();
 		setInterval(function () {
 			this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -108,21 +109,36 @@ Game.prototype = {
 						dx = -dx;
 					}
 
-					if(object.y + dy > this.canvas.height-object.radius || object.y + dy < object.radius) {
+					if (dy < 0 && object.y < object.radius) {
+						dy = -dy;
+					} else if(object.y + dy + object.radius > this.canvas.height) {
 						dy = -dy;
 					}
+
 					ballx = object.x;
 					bally = object.y;
+					ballradius = object.radius;
 				} else if (object.type === "bar") {
-					if (this.bar1rightPressed && object.x + barDx < this.canvas.width - object.width) {
+					if (object.subtype === "bar1" && this.bar1rightPressed && object.x + barDx < this.canvas.width - object.width) {
 						object.x += barDx;
-					} else if (this.bar1leftPressed && object.x - barDx > 0) {
+					} else if (object.subtype === "bar1" && this.bar1leftPressed && object.x - barDx > 0) {
+						object.x -= barDx;
+					} else if (object.subtype === "bar2" && this.bar2rightPressed && object.x + barDx < this.canvas.width - object.width) {
+						object.x += barDx;
+					} else if (object.subtype === "bar2" && this.bar2leftPressed && object.x - barDx > 0) {
 						object.x -= barDx;
 					}
 
-					if(ballx > object.x && ballx < object.x+object.width && bally > object.y && bally < object.y + object.height) {
-						dy = -dy;
+					if (dy > 0) {
+						if(ballx > object.x && ballx < object.x + object.width && bally + ballradius > object.y && bally < object.y + object.height) {
+							dy = -dy;
+						}
+					} else {
+						if(ballx > object.x && ballx < object.x + object.width && bally - ballradius > object.y && bally - ballradius < object.y + object.height) {
+							dy = -dy;
+						}
 					}
+					
 				}
 			}.bind(this));
 			
@@ -136,25 +152,26 @@ Game.prototype = {
 	},
 
 	keyDownHandler: function (e) {
-		if(e.keyCode == 90) {
+
+		if(e.keyCode == 88) {
 			this.bar1rightPressed = true;
-		} else if(e.keyCode == 88) {
+		} else if(e.keyCode == 90) {
 			this.bar1leftPressed = true;
-		} else if(e.keyCode == 78) {
-			this.bar1rightPressed = true;
 		} else if(e.keyCode == 77) {
-			this.bar1leftPressed = true;
+			this.bar2rightPressed = true;
+		} else if(e.keyCode == 78) {
+			this.bar2leftPressed = true;
 		}
 	},
 
 	keyUpHandler: function (e) {
-		if(e.keyCode == 90) {
+		if(e.keyCode == 88) {
 			this.bar1rightPressed = false;
-		} else if(e.keyCode == 88) {
+		} else if(e.keyCode == 90) {
 			this.bar1leftPressed = false;
-		} else if(e.keyCode == 78) {
-			this.bar2rightPressed = false;
 		} else if(e.keyCode == 77) {
+			this.bar2rightPressed = false;
+		} else if(e.keyCode == 78) {
 			this.bar2leftPressed = false;
 		}
 	}
@@ -162,8 +179,8 @@ Game.prototype = {
 
 var game = function(){};
 game = Object.create(Game.prototype);
-var objectParams = [ {x: 20, y: 20, width: 80, height: 20, color: "#FF0000", type: "bar"},
-	{x: 20, y: 560, width: 80, height: 20, color: "green", type: "bar"},
+var objectParams = [ {x: 20, y: 20, width: 80, height: 20, color: "#FF0000", type: "bar", subtype: "bar1"},
+	{x: 20, y: 560, width: 80, height: 20, color: "green", type: "bar", subtype: "bar2"},
 	{x: 400, y: 300, radius: 15, startAngle: 0, endAngle: Math.PI*2, color: "#FFFFFF", type: "ball"}
 ];
 game.createObjects(objectParams);

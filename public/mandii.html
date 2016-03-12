@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="stylesheets/mandii.css"/>
+    </head>
+    <body class="appContainer">
+		<nav class="nav">
+			<button class="navItem" data-navigate-to="twitterFeed" onclick='changeTab()'>Twitter Feed</button>
+			<button class="navItem" data-navigate-to="eggData" onclick='changeTab()'>Egg Production</button>
+		</nav>
+		<main class="content" id="content">
+			<div class="twitterFeed" id="twitterFeed">TWITTER</div>
+    		<div class="eggData" id="eggData" hidden="true"></div>
+		</main>
+		<script type="text/javascript" src="js/mandii.js"> </script>
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+	</body>
+</html>

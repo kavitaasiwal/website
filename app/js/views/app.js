@@ -50,8 +50,7 @@ define([
                         '<button class="navItem" data-navigate-to="#home">Home1</button>'+
                         '<button class="navItem" data-navigate-to="#projects">Projects</button>'+
                       '</nav>'    +
-                      '<main class="content" id="content">Base View</main>'   +
-                      '<footer class="footer">Footer</footer>');
+                      '<main class="content" id="content">Base View</main>');
       return this;
     },
 

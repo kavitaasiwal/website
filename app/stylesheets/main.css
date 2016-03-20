@@ -1,5 +1,8 @@
-.container{
+body {
   font-family: Helvetica;
+}
+
+.container{
   color: #555;
 }
 
@@ -11,24 +14,23 @@
 
 .appContainer {
 	margin: 10px;
-  background-color: #ccc;
 }
 
 .appContainer .content {
-	height: 75%;
-	border: 1px solid #ccc;
-	margin: 10px;
+	height: 85%;
+	padding: 20px;
 }
 
 .appContainer .nav {
-	height: 10%;
-	border: 1px solid #ccc;
+	height: 60px;
 	margin: 10px;
+  background-color: #ccc;
 }
 
-.appContainer .nav .navItem{
-	  background-color: #ccc;
+.nav .navItem {
+    background-color: transparent;
     border: none;
+    outline: none;
     color: white;
     padding: 15px 32px;
     text-align: center;
@@ -38,10 +40,3 @@
     margin: 4px 2px;
     cursor: pointer;
 }
-
-.appContainer .footer {
-	height: 10%;
-	border: 1px solid #ccc;
-	margin: 10px;
-}
-

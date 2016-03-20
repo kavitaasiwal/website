@@ -24,7 +24,9 @@
     "tests"
   ],
   "dependencies": {
-    "react": "^0.14.7",
-    "react-router": "^2.0.0"
+    "jquery": null,
+    "underscore-amd": null,
+    "backbone-amd": null,
+    "requirejs": null
   }
 }

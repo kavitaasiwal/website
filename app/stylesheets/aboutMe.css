@@ -109,11 +109,7 @@ a:focus {
 	background: #2c3e50;
 	padding-top: 60px;
 	padding-bottom: 60px;
-	color: white;
-} 
-
-.intro h5, p {
-	color: white;
+	color: #fff;
 }
 
 .intro i {

@@ -1,7 +1,8 @@
 define([
   "backbone",
-  "css!app/stylesheets/main.css"
-], function(Backbone) {
+  "text!./templates/aboutMe.html",
+  "css!app/stylesheets/aboutMe.css"
+], function(Backbone, aboutMeTemplate) {
   var AppRouter = Backbone.Router.extend({
       routes: {
           "home": "showHomeView",
@@ -46,11 +47,7 @@ define([
 
     // Re-render the title of the todo item.
     render: function() {
-      this.$el.html('<nav class="nav">'+
-                        '<button class="navItem" data-navigate-to="#home">Home1</button>'+
-                        '<button class="navItem" data-navigate-to="#projects">Projects</button>'+
-                      '</nav>'    +
-                      '<main class="content" id="content">Base View</main>');
+      this.$el.html(aboutMeTemplate);
       return this;
     },
 

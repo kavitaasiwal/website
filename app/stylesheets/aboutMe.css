@@ -1,0 +1,62 @@
+.aboutMe {
+	font-family: "Lato";
+}
+
+.toolBar {
+	height: 50px;
+	background-color: black;
+}
+
+.nav {
+	display: inline-block;
+	background-color: black;
+	margin-left: 40%;
+	margin-right: 40%;
+}
+
+.nav .menu-item {
+	display: block;
+	background-color: black;
+    float: left;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    height: 100%;
+}
+
+
+.link {
+	display: block;
+	background-color: black;
+}
+
+.glyphicon {
+	font-size: 20px;
+	color: white;
+}
+
+.link:hover {
+	background-color: black;
+}
+
+.centered {
+	text-align: center;
+}
+
+.header {
+	background: url(../assets/images/me.jpeg) no-repeat center top;
+	width: 100%;
+	height: 350px;
+	background-color: black;
+	color: white;
+}
+
+.intro {
+	background: #2c3e50;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    color: white;
+}
+
+.desc {
+	padding-top: 50px;
+}
